@@ -10,9 +10,8 @@
   "author": "",
   "private": true,
   "dependencies": {
-    "cheerio": "~0.12.1"
   },
   "DEBUG local dependencies": {
-    "lodash-fork": "0.x"
+    "cheerio-fork": "0.x"
   }
 }
