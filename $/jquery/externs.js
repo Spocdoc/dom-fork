@@ -148,7 +148,8 @@ window.$ = {
         "outerWidth": function () {},
         "size": function () {},
         "andSelf": function () {},
-        "htmlEscape": function () {}
+        "htmlEscape": function () {},
+        "childIndex": function () {}
     },
     "extend": function () {},
     "expando": {},
