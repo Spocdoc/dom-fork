@@ -1,3 +1,4 @@
+ElementType = require "domelementtype-fork"
 $ = require 'cheerio-fork'
 {extend} = require 'lodash-fork'
 
@@ -8,12 +9,9 @@ extend $prototype,
   scrollLeft: -> this
   scrollTop: -> this
 
-  name: ->
-    @[0].nodeName
-
   parents: ->
     e = this
-    e = e.parent() while e[0].parentNode && e[0].parentNode.type isnt 'root'
+    e = e.parent() while e[0].parentNode && !(e[0].parentNode.nodeType in [ElementType.Document, ElementType.DocumentFragment])
 
   appendTo: ($rhs) -> $rhs.append this
   prependTo: ($rhs) -> $rhs.prepend this
@@ -53,13 +51,6 @@ extend $prototype,
 #     nodes = []
 #     nodes.push element.children... for element in this
 #     @make nodes
-
-  contains: (arg) ->
-    return true if arg is node = @[0]
-    while arg = arg.parentNode when node is arg
-      return true
-    false
-
 
 
 
