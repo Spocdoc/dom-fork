@@ -47,6 +47,8 @@ for event in HANDLED_EVENTS
 
 extend $prototype,
 
+  onBlurContained: ->
+
   select: (arg) ->
     if arg
       @on 'select', arg

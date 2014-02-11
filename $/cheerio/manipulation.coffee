@@ -6,8 +6,20 @@ $prototype = $('').constructor.prototype
 
 extend $prototype,
 
-  scrollLeft: -> this
-  scrollTop: -> this
+  scrollLeft: ->
+    if arguments.length
+      this
+    else
+      0
+
+  scrollTop: ->
+    if arguments.length
+      this
+    else
+      0
+
+  height: -> NaN
+  width: -> NaN
 
   parents: ->
     e = this

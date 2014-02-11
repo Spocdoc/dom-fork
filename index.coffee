@@ -8,6 +8,8 @@ DOCUMENT_FRAGMENT_NODE = 11
 
 module.exports = $ = require './$'
 
+global.$ = $
+
 $['htmlEscape'] = $.htmlEscape = do ->
   p = $ '<p>'
   (text) -> p.text(text).html()

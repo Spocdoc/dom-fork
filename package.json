@@ -10,8 +10,6 @@
   "author": "",
   "private": true,
   "dependencies": {
-  },
-  "DEBUG local dependencies": {
     "cheerio-fork": "0.x"
   }
 }
