@@ -1,6 +1,6 @@
 {
   "name": "dom-fork",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "ERROR: No README.md file found!",
   "main": "index.coffee",
   "scripts": {
@@ -10,6 +10,7 @@
   "author": "",
   "private": true,
   "dependencies": {
-    "cheerio-fork": "0.x"
+    "cheerio-fork": "0.x",
+    "domelementtype-fork": "1.x"
   }
 }
