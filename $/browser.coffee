@@ -51,5 +51,8 @@ $['fn']['extend']
         return
 
   'scrollParent': ->
-    @parents().filter(-> return (/(auto|scroll)/).test($.css(this,"overflow")+$.css(this,"overflow-y")+$.css(this,"overflow-x"))).eq(0)
+    unless (elems = @parents().filter(-> return (/(auto|scroll)/).test($.css(this,"overflow")+$.css(this,"overflow-y")+$.css(this,"overflow-x"))).eq(0))[0]
+      elems = $('body')
+    elems
+
 
