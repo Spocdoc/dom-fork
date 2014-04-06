@@ -12,3 +12,5 @@ $.isElement = (d) ->
   d?.type is 'tag'
 
 $.fn.scrollParent = -> $ null
+
+$.fn.dnd = ->

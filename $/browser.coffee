@@ -7,6 +7,32 @@ $['textNode'] = $.textNode = (text) ->
 $['setInterval'] = (fn, interval) -> window.setInterval fn, interval
 $['clearInterval'] = (id) -> window.clearInterval id
 
+# taken from http://stackoverflow.com/questions/10867506/dragleave-of-parent-element-fires-when-dragging-over-children-elements
+$['fn']['dnd'] = (options) ->
+  @['each'] ->
+    self = $(this)
+    collection = $()
+    self.on "dragenter", (event) ->
+      self.trigger "dndenter", event  if collection.size() is 0
+      collection = collection.add(event.target)
+      return
+
+    self.on "dragleave", (event) ->
+      #
+      #             * Firefox 3.6 fires the dragleave event on the previous element
+      #             * before firing dragenter on the next one so we introduce a delay
+      #             
+      setTimeout (->
+        collection = collection.not(event.target)
+        self.trigger "dndleave", event  if collection.size() is 0
+        return
+      ), 1
+
+      return
+
+    return
+
+
 $['fn']['addClass'] = (arg) ->
   return unless arg
   if arg.constructor is String
