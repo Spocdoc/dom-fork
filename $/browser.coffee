@@ -30,6 +30,10 @@ $['fn']['dnd'] = (options) ->
 
       return
 
+    self.on 'drop', (event) ->
+      collection = $()
+      return
+
     return
 
 
